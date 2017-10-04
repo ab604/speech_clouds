@@ -35,22 +35,10 @@ corbtdm <- as.matrix(corbtdm[order(corbtdm,decreasing = TRUE),])
 maytdm <- as.matrix(tdm[,2])
 maytdm <- as.matrix(maytdm[order(maytdm,decreasing = TRUE),])
 
-# Create matrices --------------------------------------------------------------
-dtm <- TermDocumentMatrix(corb_doc)
-m <- as.matrix(dtm)
-v <- sort(rowSums(m),decreasing=TRUE)
-d <- data.frame(word = names(v),freq=v)
-head(d, 10)
-
-dtm2 <- TermDocumentMatrix(may_doc)
-m2 <- as.matrix(dtm2)
-v2 <- sort(rowSums(m2),decreasing=TRUE)
-d2 <- data.frame(word = names(v2),freq=v2)
-head(d2, 10)
-
 # Make wordcloud ---------------------------------------------------------------
 set.seed(1234)
-pdf("speechcloud.pdf")
+#pdf("speechcloud.pdf")
+png("images/speechcloud.png")
 par(mfrow=c(1,2))
 wordcloud(rownames(corbtdm),corbtdm, min.freq = 1, scale=c(5, .2),
           max.words=200, random.order=FALSE, rot.per=0.35, 
@@ -61,12 +49,19 @@ wordcloud(rownames(maytdm),maytdm, min.freq = 1, scale=c(5, .2),
                      colors=brewer.pal(8, "Dark2"))
 dev.off()
 
+
+#pdf("comparison_cloud.pdf")
+png("images/comparison_cloud.png")
 par(mfrow=c(1,1))
-pdf("comparison_cloud.pdf")
 comparison.cloud(tdm, random.order=FALSE, 
                  colors = c("indianred3","lightsteelblue3"), 
                  title.size=2.5, max.words=400)
 dev.off()
 
-
-commonality.cloud(tdm, random.order=FALSE, scale=c(5, .5),colors = brewer.pal(4, "Dark2"), max.words=400)
+png("images/commonality_cloud.png")
+par(mfrow=c(1,1))
+commonality.cloud(tdm, 
+                  random.order=FALSE, 
+                  scale=c(5, .5),colors = brewer.pal(4, "Dark2"), 
+                  max.words=400)
+dev.off()
