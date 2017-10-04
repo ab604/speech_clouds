@@ -14,12 +14,12 @@ Spot the difference?! Corbyn on the left, May on the right. Of course.
 
 ## Comparison cloud
 This cloud compares the relative frequency of the words used in the speeches:
-![Speech Cloud](/images/comparison_cloud.png)
+![Comparison Cloud](/images/comparison_cloud.png)
 
 ## Commonality cloud
 This cloud shows only words used in both speeches.
-![Speech Cloud](/images/commonality_cloud.png.png)
+![Commonality Cloud](/images/commonality_cloud.png)
 
 I used this [tutorial](https://rpubs.com/brandonkopp/creating-word-clouds-in-r) to make the clouds.
 
-The code and full repository is here: [](https://github.com/ab604/speech_clouds)
+The code and full repository is here: (https://github.com/ab604/speech_clouds)
