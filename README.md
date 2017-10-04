@@ -22,4 +22,4 @@ This cloud shows only words used in both speeches.
 
 I used this [tutorial](https://rpubs.com/brandonkopp/creating-word-clouds-in-r) to make the clouds.
 
-The code and full repository is here: (https://github.com/ab604/speech_clouds)
+The code and full repository is here: [https://github.com/ab604/speech_clouds](https://github.com/ab604/speech_clouds)
